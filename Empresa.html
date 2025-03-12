@@ -38,7 +38,10 @@
         <p>Na SUPERFACIL INFORMÁTICA, acreditamos que a tecnologia pode ser simples e eficaz, tornando a vida de nossos clientes mais fácil. Nossa equipe altamente qualificada está pronta para ajudar sua empresa a alcançar seus objetivos, proporcionando um ambiente de TI seguro, eficiente e inovador. Conte conosco para simplificar a complexidade da tecnologia e impulsionar o crescimento do seu negócio.</p>
     </div>
     <div class="footer">
-        <p>© 2025 Consultoria em Tecnologia da Informação em Curitiba | SUPERFACIL INFORMÁTICA. Direitos reservados.</p>
+        <p>© <span id="currentYear"></span> Consultoria em Tecnologia da Informação em Curitiba | SUPERFACIL INFORMÁTICA. Direitos reservados.</p>
     </div>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

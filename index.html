@@ -1366,7 +1366,7 @@ Na SUPERFACIL INFORMÁTICA, acreditamos que a tecnologia pode ser simples e efic
             
             <div class="fixed_bar_bottom container-fluid d-flex justify_content-center align-items-center">
                 <div class="copyright py-3 text-center">
-                    © 2024 Consultoria em Tecnologia da Informação em Curitiba | SUPERFACIL INFORMÁTICA. Direitos reservados.<br>
+                    © <span id="currentYear"></span> Consultoria em Tecnologia da Informação em Curitiba | SUPERFACIL INFORMÁTICA. Direitos reservados.<br>
                     <a class="access" href="https://sibnext.com/Chat.aspx?log=show&amp;emp=25109" target="_blank" aria-label="Gerenciador de Sites">
                         <i class="fa fa-cog"></i>
                     </a>
@@ -1386,6 +1386,7 @@ Na SUPERFACIL INFORMÁTICA, acreditamos que a tecnologia pode ser simples e efic
                         }
                     });
                 }
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
             </script>
             <div class="scriptExtra" style="display: none;">
                 <link rel="stylesheet" href="https://www.sibnext1.com/Styles/animate.css">
