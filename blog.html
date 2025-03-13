@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Superfacil Informática</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        article {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            color: #0056b3;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .article-content {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog da Superfacil Informática</h1>
+        <p>Artigos sobre Tecnologia e Inovação</p>
+    </header>
+
+    <main>
+        <article>
+            <h3>Inteligências Artificiais em Destaque</h3>
+        </article>
+
+        <article>
+            <h4>Gemini</h4>
+            <img src="images/Gemini.png" alt="Gemini IA" width="240" height="240">
+            <div class="article-content">
+                <p>Gemini é a mais nova IA do Google, projetada para ser multimodal desde o início. Isso significa que ela pode entender e combinar diferentes tipos de informações, como texto, código, áudio, imagem e vídeo. Com sua grande capacidade de raciocínio, Gemini promete revolucionar a forma como interagimos com a tecnologia.</p>
+            </div>
+        </article>
+
+        <article>
+            <h4>ChatGPT</h4>
+            <img src="images/ChatGPT.png" alt="ChatGPT IA" width="240" height="240">
+            <div class="article-content">
+                <p>ChatGPT é um modelo de linguagem desenvolvido pela OpenAI, baseado na arquitetura GPT (Generative Pre-trained Transformer). Ele é capaz de gerar textos coerentes, responder a perguntas de forma conversacional e até mesmo escrever diferentes tipos de conteúdo criativo. ChatGPT tem se destacado por sua versatilidade e capacidade de adaptação a diferentes contextos.</p>
+            </div>
+        </article>
+
+        <article>
+            <h4>GitHub Copilot</h4>
+            <img src="images/copilot.png" alt="GitHub Copilot IA">
+            <div class="article-content">
+                <p>GitHub Copilot é um assistente de programação baseado em IA, desenvolvido em parceria pela GitHub e OpenAI. Ele ajuda os desenvolvedores a escrever código de forma mais rápida e eficiente, sugerindo linhas de código e até mesmo funções inteiras com base no contexto do código que está sendo escrito. GitHub Copilot está transformando a forma como o código é desenvolvido.</p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+</body>
+</html>
