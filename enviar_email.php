@@ -21,7 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data .= "Assunto: $assunto\n";
     $data .= "Mensagem:\n$mensagem\n\n";
 
-    $file = 'submissions.txt';
+    $dir = 'Sub';
+    $file = $dir . '/submissions.txt';
+
+    // Create directory if it doesn't exist
+    if (!is_dir($dir)) {
+        mkdir($dir);
+    }
     
     // Save to file
     if (file_put_contents($file, $data, FILE_APPEND | LOCK_EX)) {
