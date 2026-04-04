@@ -59,7 +59,7 @@
         }
 
         .navbar-brand img {
-            height: 45px;
+            height: 80px;
             transition: transform 0.3s;
         }
         .navbar-brand:hover img {
@@ -366,5 +366,6 @@
             .btn-glow { padding: 12px 24px; }
             .orb-1 { width: 300px; height: 300px; }
             .stat-item { margin-bottom: 30px; }
+            .navbar-brand img { height: 55px; }
             html, body { overflow-x: hidden; width: 100%; position: relative; }
         }
