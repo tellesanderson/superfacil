@@ -1,11 +1,13 @@
 <?php
 // filepath: c:\Users\User\Documents\GITHUB\superfacil\enviar_email.php
 
+header('Content-Type: text/plain; charset=utf-8');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = strip_tags(trim($_POST["nome"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $telefone = strip_tags(trim($_POST["telefone"])); // Get the phone number
-    $assunto = isset($_POST["assunto"]) ? strip_tags(trim($_POST["assunto"])) : 'Trabalhe Conosco';
+    $assunto = isset($_POST["assunto"]) ? strip_tags(trim($_POST["assunto"])) : 'Contato';
     $mensagem = strip_tags(trim($_POST["mensagem"]));
 
     // Validação básica
@@ -15,20 +17,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $data = "Nome: $nome\n";
+    $timezone = new DateTimeZone('America/Sao_Paulo');
+    $date = new DateTime('now', $timezone);
+    $dataStr = $date->format('d/m/Y H:i:s');
+
+    $data = "Data: $dataStr\n";
+    $data .= "Nome: $nome\n";
     $data .= "Email: $email\n";
     $data .= "Telefone: $telefone\n";
     $data .= "Assunto: $assunto\n";
-    $data .= "Mensagem:\n$mensagem\n\n";
+    $data .= "Mensagem:\n$mensagem\n-------------------------\n";
 
     $dir = 'Sub';
-    $file = $dir . '/submissions.txt';
+    $file = $dir . '/submissions.php';
 
     // Create directory if it doesn't exist
     if (!is_dir($dir)) {
         mkdir($dir);
     }
     
+    // Add security lock to the file if it doesn't exist
+    if (!file_exists($file)) {
+        file_put_contents($file, "<?php exit(\"Acesso Restrito.\"); ?>\n\n");
+    }
+
     // Save to file
     if (file_put_contents($file, $data, FILE_APPEND | LOCK_EX)) {
         http_response_code(200);
