@@ -3,49 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços | SUPERFACIL INFORMÁTICA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .service-section {
-            padding: 60px 0;
-        }
-        .service-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .service-description {
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
-    </style>
+    <meta name="description" content="O parceiro oficial do desempenho e segurança da sua empresa. Infraestrutura escalável e gestão inteligente de TI em Curitiba.">
+    <title>Nossos Serviços | SuperFacil Informática</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts: Outfit for sleek headings, Inter for clean body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container service-section">
-        <div class="text-center mb-4"><a href="http://superfacil.inf.br"><img src="images/logo.png" alt="SUPERFACIL INFORMÁTICA" style="max-width: 200px; height: auto;"></a></div>
-        <h1 class="text-center">Nossos Serviços</h1>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <img class="rounded-circle img-thumbnail" src="https://img.b2bpic.net/fotos-gratis/jovem-empresario-olhando-para-o-celular-de-tela-em-branco_23-2147923294.jpg?iaID=3308881&amp;qry=consultoria em infraestrutura de ti. JPG&amp;oIA=square" alt="Consultoria Em Infraestrutura De TI">
-                <div class="service-title">Consultoria Em Infraestrutura De TI</div>
-                <div class="service-description">Transforme a infraestrutura de TI da sua empresa com nossa Consultoria Especializada. Soluções personalizadas para potencializar seus resultados.</div>
-            </div>
-            <div class="col-md-4 text-center">
-                <img class="rounded-circle img-thumbnail" src="https://img.b2bpic.net/fotos-gratis/parceiro-de-negocios-passando-o-grafico-para-seu-gerente-feminino_23-2147838542.jpg?iaID=2518095&amp;qry=consultoria em gestão de projetos de ti JPG&amp;oIA=square" alt="Consultoria Em Gestão De Projetos De TI">
-                <div class="service-title">Consultoria Em Gestão De Projetos De TI</div>
-                <div class="service-description">Consultoria em Gestão de Projetos de TI: Transforme suas ideias em realidade com nossa expertise em planejamento e execução de projetos de tecnologia da informação.</div>
-            </div>
-            <div class="col-md-4 text-center">
-                <img class="rounded-circle img-thumbnail" src="https://img.b2bpic.net/fotos-gratis/vista-superior-do-teclado-com-trava-e-corrente-de-metal_23-2148578114.jpg?iaID=8725512&amp;qry=consultoria em segurança da informação. JPG&amp;oIA=square" alt="Consultoria Em Segurança Da Informação">
-                <div class="service-title">Consultoria Em Segurança Da Informação</div>
-                <div class="service-description">Proteja seus dados com a Consultoria em Segurança da Informação da SUPERFACIL INFORMÁTICA e garanta a tranquilidade da sua empresa.</div>
+    <div class="orb-1"></div>
+    <div class="orb-2"></div>
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="SuperFacil Logo">
+            </a>
+            <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Empresa.html">Sobre a Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html" class="nav-link active">Nossos Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog & IA</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="fale.html" class="btn btn-outline-glass btn-sm px-4">Fale Conosco</a>
+                </div>
             </div>
         </div>
+    </nav>
+    
+    <section class="section-padding" style="min-height: 80vh; padding-top: 150px;">
+        <div class="container">
+            
+<div class="section-header">
+    <span class="badge-tech">Portfólio</span>
+    <h1 style="font-family: 'Outfit'; font-weight: 800; font-size: 3rem;">Nossos Serviços</h1>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="glass-card text-center" style="padding: 50px 30px;">
+            <div class="icon-wrapper mx-auto" style="width:80px;height:80px;font-size:30px;"><i class="fa-solid fa-server"></i></div>
+            <h3>Consultoria Em Infraestrutura De TI</h3>
+            <p>Transforme a infraestrutura de TI da sua empresa com nossa Consultoria Especializada. Soluções personalizadas para potencializar seus resultados e evitar quedas sistêmicas.</p>
+            <a href="fale.html" class="btn-outline-glass mt-3 d-inline-block">Contratar</a>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    <div class="col-lg-4">
+        <div class="glass-card text-center" style="padding: 50px 30px;">
+            <div class="icon-wrapper mx-auto" style="width:80px;height:80px;font-size:30px;"><i class="fa-solid fa-list-check"></i></div>
+            <h3>Gestão De Projetos De TI</h3>
+            <p>Transforme suas ideias em realidade com nossa expertise em planejamento e execução de projetos de tecnologia. Entregamos no prazo e dentro do orçamento.</p>
+            <a href="fale.html" class="btn-outline-glass mt-3 d-inline-block">Contratar</a>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="glass-card text-center" style="padding: 50px 30px; border-color: rgba(6,182,212,0.4);">
+            <div class="icon-wrapper mx-auto" style="width:80px;height:80px;font-size:30px; background:linear-gradient(135deg, #06b6d4, #3b82f6); color:white;"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Segurança Da Informação</h3>
+            <p>Proteja seus dados sensíveis com a SuperFacil e garanta a tranquilidade da sua empresa contra ataques cibernéticos, ransomwares e vazamentos.</p>
+            <a href="fale.html" class="btn-glow mt-3 d-inline-block">Contratar Especialista</a>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="SuperFacil Logo" class="footer-logo">
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top:15px; margin-right:20px;">
+                        Protegendo dados e acelerando sistemas desde 2011. Sua infraestrutura blindada e moderna na palma da mão.
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://wa.me/551111111111" class="social-circle" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color:white; font-family:'Outfit'; font-weight:700; margin-bottom: 20px;">Contato Direto</h5>
+                    <ul class="list-unstyled" style="color: var(--text-muted); line-height: 2;">
+                        <li><i class="fa-solid fa-location-dot me-2" style="color:var(--accent-cyan);"></i> Curitiba, PR - e Região</li>
+                        <li><i class="fa-solid fa-envelope me-2" style="color:var(--accent-cyan);"></i> sac@superfacil.inf.br</li>
+                        <li><i class="fa-solid fa-phone me-2" style="color:var(--accent-cyan);"></i> +55 (11) 1111-1111</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color:white; font-family:'Outfit'; font-weight:700; margin-bottom: 20px;">Acesso Rápido</h5>
+                    <ul class="list-unstyled" style="line-height:2;">
+                        <li><a href="Empresa.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Quem Somos</a></li>
+                        <li><a href="services.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Consultorias em Portfólio</a></li>
+                        <li><a href="blog.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Artigos e IA</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4" style="border-top:1px solid rgba(255,255,255,0.05); color:var(--text-muted); font-size:0.85rem;">
+                © <span id="currentYear"></span> SuperFacil Informática. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Whatsapp Floating Button -->
+    <a href="https://wa.me/551111111111?text=Olá, vim pelo site e gostaria de conversar com um especialista." target="_blank" class="fab-whatsapp" aria-label="Fale conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set dynamic year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('yearsMarket').textContent = (new Date().getFullYear() - 2011) + '+';
+        
+        // Sticky Navbar effect is native via CSS backdrop-filter, but we can add shadow on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.glass-nav').style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+            } else {
+                document.querySelector('.glass-nav').style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

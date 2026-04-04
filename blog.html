@@ -3,100 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Superfacil Informática</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        article {
-            background-color: #fff;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2, h3, h4 {
-            color: #0056b3;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .article-content {
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <meta name="description" content="O parceiro oficial do desempenho e segurança da sua empresa. Infraestrutura escalável e gestão inteligente de TI em Curitiba.">
+    <title>Blog de IA | SuperFacil Informática</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts: Outfit for sleek headings, Inter for clean body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <a href="http://superfacil.inf.br"><img src="images/logo.png" alt="Superfacil Logo" height="60" style="margin-bottom:10px;"></a>
-        <h1>Blog da Superfacil Informática</h1>
-        <p>Artigos sobre Tecnologia e Inovação</p>
-    </header>
-
-    <main>
-        <article>
-            <h3>Inteligências Artificiais em Destaque</h3>
-        </article>
-
-        <article>
-            <h4>Gemini</h4>
-            <img src="images/Gemini.png" alt="Gemini IA" width="240" height="240">
-            <div class="article-content">
-                <p>Gemini é a mais nova IA do Google, projetada para ser multimodal desde o início. Isso significa que ela pode entender e combinar diferentes tipos de informações, como texto, código, áudio, imagem e vídeo. Com sua grande capacidade de raciocínio, Gemini promete revolucionar a forma como interagimos com a tecnologia.</p>
+    <div class="orb-1"></div>
+    <div class="orb-2"></div>
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="SuperFacil Logo">
+            </a>
+            <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Empresa.html">Sobre a Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Nossos Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html" class="nav-link active">Blog & IA</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="fale.html" class="btn btn-outline-glass btn-sm px-4">Fale Conosco</a>
+                </div>
             </div>
-        </article>
+        </div>
+    </nav>
+    
+    <section class="section-padding" style="min-height: 80vh; padding-top: 150px;">
+        <div class="container">
+            
+<div class="section-header">
+    <span class="badge-tech">Conteúdo e Artigos</span>
+    <h1 style="font-family: 'Outfit'; font-weight: 800; font-size: 3rem;">Inovação & IA</h1>
+    <p style="color: var(--text-muted);">Mantenha-se atualizado sobre as ferramentas do futuro.</p>
+</div>
 
-        <article>
-            <h4>ChatGPT</h4>
-            <img src="images/ChatGPT.png" alt="ChatGPT IA" width="240" height="240">
-            <div class="article-content">
-                <p>ChatGPT é um modelo de linguagem desenvolvido pela OpenAI, baseado na arquitetura GPT (Generative Pre-trained Transformer). Ele é capaz de gerar textos coerentes, responder a perguntas de forma conversacional e até mesmo escrever diferentes tipos de conteúdo criativo. ChatGPT tem se destacado por sua versatilidade e capacidade de adaptação a diferentes contextos.</p>
+<div class="row g-4">
+    <!-- BlogPost 1 -->
+    <div class="col-lg-4">
+        <div class="glass-card p-0" style="overflow: hidden;">
+            <div style="background: url('images/Gemini.png') center/cover no-repeat; height: 200px; display:flex; align-items:flex-end;">
+               <div style="width:100%; height:50%; background: linear-gradient(to top, rgba(15,23,42,1), transparent);"></div>
             </div>
-        </article>
-
-        <article>
-            <h4>GitHub Copilot</h4>
-            <img src="images/copilot.png" alt="GitHub Copilot IA">
-            <div class="article-content">
-                <p>GitHub Copilot é um assistente de programação baseado em IA, desenvolvido em parceria pela GitHub e OpenAI. Ele ajuda os desenvolvedores a escrever código de forma mais rápida e eficiente, sugerindo linhas de código e até mesmo funções inteiras com base no contexto do código que está sendo escrito. GitHub Copilot está transformando a forma como o código é desenvolvido.</p>
+            <div class="p-4">
+                <span class="badge bg-primary mb-2">Google</span>
+                <h3 style="font-size: 1.5rem;">Gemini: A IA Multimodal</h3>
+                <p>Gemini é a mais nova IA do Google, projetada para entender e combinar diferentes tipos de informações, como texto, código e imagem. Com sua grande capacidade de raciocínio, o futuro mudou.</p>
             </div>
-        </article>
-    </main>
+        </div>
+    </div>
+    
+    <!-- BlogPost 2 -->
+    <div class="col-lg-4">
+        <div class="glass-card p-0" style="overflow: hidden;">
+            <div style="background: url('images/ChatGPT.png') center/cover no-repeat; height: 200px; display:flex; align-items:flex-end; background-color: white;">
+               <div style="width:100%; height:50%; background: linear-gradient(to top, rgba(15,23,42,1), transparent);"></div>
+            </div>
+            <div class="p-4">
+                <span class="badge" style="background:#10a37f; margin-bottom: 8px;">OpenAI</span>
+                <h3 style="font-size: 1.5rem;">ChatGPT: Linguagem Avançada</h3>
+                <p>Um modelo poderoso na arquitetura GPT. Capaz de gerar textos coerentes e planejar em cenários lógicos complexos. ChatGPT tem se destacado por sua adaptação a negócios.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- BlogPost 3 -->
+    <div class="col-lg-4">
+        <div class="glass-card p-0" style="overflow: hidden;">
+            <div style="background: url('images/copilot.png') center/cover no-repeat; height: 200px; display:flex; align-items:flex-end;">
+               <div style="width:100%; height:50%; background: linear-gradient(to top, rgba(15,23,42,1), transparent);"></div>
+            </div>
+            <div class="p-4">
+                <span class="badge bg-dark mb-2 border border-secondary">GitHub</span>
+                <h3 style="font-size: 1.5rem;">GitHub Copilot: Dev Assistant</h3>
+                <p>O melhor parceiro de programação baseado em IA. Ajuda as equipes de TI a escreverem códigos eficientes, sugerindo arquiteturas e prevenindo bugs em tempo real no fluxo de trabalho.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="SuperFacil Logo" class="footer-logo">
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top:15px; margin-right:20px;">
+                        Protegendo dados e acelerando sistemas desde 2011. Sua infraestrutura blindada e moderna na palma da mão.
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://wa.me/551111111111" class="social-circle" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color:white; font-family:'Outfit'; font-weight:700; margin-bottom: 20px;">Contato Direto</h5>
+                    <ul class="list-unstyled" style="color: var(--text-muted); line-height: 2;">
+                        <li><i class="fa-solid fa-location-dot me-2" style="color:var(--accent-cyan);"></i> Curitiba, PR - e Região</li>
+                        <li><i class="fa-solid fa-envelope me-2" style="color:var(--accent-cyan);"></i> sac@superfacil.inf.br</li>
+                        <li><i class="fa-solid fa-phone me-2" style="color:var(--accent-cyan);"></i> +55 (11) 1111-1111</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color:white; font-family:'Outfit'; font-weight:700; margin-bottom: 20px;">Acesso Rápido</h5>
+                    <ul class="list-unstyled" style="line-height:2;">
+                        <li><a href="Empresa.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Quem Somos</a></li>
+                        <li><a href="services.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Consultorias em Portfólio</a></li>
+                        <li><a href="blog.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Artigos e IA</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4" style="border-top:1px solid rgba(255,255,255,0.05); color:var(--text-muted); font-size:0.85rem;">
+                © <span id="currentYear"></span> SuperFacil Informática. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Whatsapp Floating Button -->
+    <a href="https://wa.me/551111111111?text=Olá, vim pelo site e gostaria de conversar com um especialista." target="_blank" class="fab-whatsapp" aria-label="Fale conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+        // Set dynamic year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('yearsMarket').textContent = (new Date().getFullYear() - 2011) + '+';
+        
+        // Sticky Navbar effect is native via CSS backdrop-filter, but we can add shadow on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.glass-nav').style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+            } else {
+                document.querySelector('.glass-nav').style.boxShadow = 'none';
+            }
+        });
     </script>
 </body>
 </html>
