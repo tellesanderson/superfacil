@@ -709,3 +709,9 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Fix Select Option colors for visibility */
+        .form-glass-input option {
+            background-color: #0f172a !important; /* Dark slate background */
+            color: #ffffff !important;            /* White text */
+        }
