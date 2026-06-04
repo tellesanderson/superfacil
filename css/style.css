@@ -629,3 +629,83 @@
             margin-bottom: 8px;
             display: inline-block;
         }
+
+        /* Animated Success Checkmark */
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            padding: 0;
+            position: relative;
+        }
+
+        .success-checkmark .check-icon {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            border-radius: 50%;
+            box-sizing: content-box;
+            border: 4px solid var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .success-checkmark .check-icon::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+            top: -4px; left: -4px;
+            animation: pulse-ring 1.5s infinite ease-out;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        .success-checkmark .check-icon .icon-line {
+            height: 5px;
+            background-color: var(--accent-cyan);
+            display: block;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .success-checkmark .check-icon .icon-line.line-tip {
+            width: 34px;
+            right: 15px;
+            top: 30px;
+            transform: rotate(-45deg);
+            animation: write-tip 0.5s ease;
+        }
+
+        .success-checkmark .check-icon .icon-line.line-long {
+            width: 20px;
+            left: 20px;
+            top: 42px;
+            transform: rotate(45deg);
+            animation: write-long 0.5s ease;
+        }
+
+        @keyframes write-long {
+            0% { width: 0; left: 10px; top: 32px; }
+            100% { width: 20px; left: 20px; top: 42px; }
+        }
+
+        @keyframes write-tip {
+            0% { width: 0; right: 40px; top: 42px; }
+            50% { width: 0; right: 40px; top: 42px; }
+            100% { width: 34px; right: 15px; top: 30px; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }

@@ -189,21 +189,38 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(async (response) => {
                 let res = await response.json();
                 if (response.status === 200) {
-                    statusEl.innerHTML = `
-                        <div class="alert alert-success border-0 bg-success-subtle text-success p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
-                            <i class="fa-solid fa-circle-check me-2"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
-                        </div>
-                    `;
-                    contactForm.reset();
-                    contactForm.classList.remove('was-validated');
+                    // Fade out form fields
+                    contactForm.style.transition = 'opacity 0.4s ease';
+                    contactForm.style.opacity = '0';
+                    setTimeout(() => {
+                        contactForm.style.display = 'none';
+                        statusEl.innerHTML = `
+                            <div class="text-center py-5 animate-fade-in">
+                                <div class="success-checkmark">
+                                    <div class="check-icon">
+                                        <span class="icon-line line-long"></span>
+                                        <span class="icon-line line-tip"></span>
+                                    </div>
+                                </div>
+                                <h3 style="font-family:'Outfit'; font-weight:800; font-size:1.8rem; margin-bottom:15px; color:#ffffff;">Mensagem Recebida!</h3>
+                                <p class="text-muted mb-4" style="font-size:1.05rem; max-width:420px; margin: 0 auto 30px; line-height: 1.6;">
+                                    Muito obrigado pelo contato. Nossa equipe de TI analisará a sua mensagem e responderá em até 2 horas úteis.
+                                </p>
+                                <button type="button" id="reset-form-btn" class="btn-outline-glass btn-sm" style="font-size:0.9rem; padding: 10px 24px; cursor: pointer;">
+                                    <i class="fa-solid fa-arrow-left me-1"></i> Enviar Outra Mensagem
+                                </button>
+                            </div>
+                        `;
+                        statusEl.style.display = 'block';
+                    }, 400);
                 } else {
                     statusEl.innerHTML = `
                         <div class="alert alert-danger border-0 bg-danger-subtle text-danger p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
                             <i class="fa-solid fa-circle-exclamation me-2"></i> ${res.message || 'Ops! Ocorreu um erro ao enviar sua mensagem.'}
                         </div>
                     `;
+                    statusEl.style.display = 'block';
                 }
-                statusEl.style.display = 'block';
             })
             .catch(error => {
                 console.error(error);
@@ -218,6 +235,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = submitBtnText;
             });
+        });
+        statusEl.addEventListener('click', function(e) {
+            const btn = e.target.closest('#reset-form-btn');
+            if (btn) {
+                statusEl.style.transition = 'opacity 0.3s ease';
+                statusEl.style.opacity = '0';
+                setTimeout(() => {
+                    statusEl.style.display = 'none';
+                    statusEl.innerHTML = '';
+                    statusEl.style.opacity = '1';
+                    
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                    contactForm.style.display = 'block';
+                    setTimeout(() => {
+                        contactForm.style.opacity = '1';
+                    }, 50);
+                }, 300);
+            }
         });
     }
 });
