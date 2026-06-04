@@ -45,27 +45,88 @@
     
     <section class="section-padding" style="min-height: 80vh; padding-top: 150px;">
         <div class="container">
-            
-<div class="row justify-content-center text-center">
-    <div class="col-md-8">
-        <div class="glass-card">
-            <div class="icon-wrapper mx-auto mb-4" style="width: 80px; height: 80px; font-size: 35px; border-radius: 50%;">
-                <i class="fa-solid fa-headset"></i>
-            </div>
-            <h1 style="font-family: 'Outfit'; font-weight: 800; font-size: 3rem; margin-bottom: 20px;">Fale Conosco</h1>
-            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px;">
-                Nossos especialistas estão prontos para diagnosticar a suan rede e oferecer a melhor solução de segurança e estrutura. Chame-nos instantaneamente pelo WhatsApp.
-            </p>
-            <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="btn-glow" style="font-size: 1.3rem; padding: 18px 40px;">
-                <i class="fa-brands fa-whatsapp"></i> Iniciar Conversa no WhatsApp
-            </a>
-            
-            <hr style="border-color: rgba(255,255,255,0.1); margin: 40px 0;">
-            <p style="color: var(--text-muted);"><i class="fa-solid fa-envelope me-2" style="color:var(--accent-cyan);"></i> <a href="mailto:sac@superfacil.inf.br" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='inherit'">sac@superfacil.inf.br</a></p>
-        </div>
-    </div>
-</div>
+            <div class="row g-4 justify-content-center">
+                <!-- Column 1: Informações de Contato -->
+                <div class="col-lg-5">
+                    <div class="glass-card d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="icon-wrapper mb-4" style="width: 70px; height: 70px; font-size: 30px;">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <h1 style="font-family: 'Outfit'; font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">Fale Conosco</h1>
+                            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px;">
+                                Nossos especialistas estão de prontidão para responder suas dúvidas, elaborar diagnósticos de infraestrutura e propor soluções definitivas em segurança para sua empresa.
+                            </p>
+                            
+                            <ul class="list-unstyled mb-4" style="color: var(--text-muted); line-height: 2.2;">
+                                <li><i class="fa-solid fa-clock me-2" style="color:var(--accent-cyan);"></i> Segunda a Sexta: 8h às 18h</li>
+                                <li><i class="fa-solid fa-location-dot me-2" style="color:var(--accent-cyan);"></i> Atendimento em Curitiba, PR - e Região</li>
+                                <li><i class="fa-solid fa-envelope me-2" style="color:var(--accent-cyan);"></i> <a href="mailto:sac@superfacil.inf.br" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='inherit'">sac@superfacil.inf.br</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-4 pt-3" style="border-top: 1px solid rgba(255,255,255,0.08);">
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Prefere conversar direto pelo WhatsApp?</p>
+                            <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="btn-glow w-100 justify-content-center">
+                                <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Column 2: Formulário de Contato -->
+                <div class="col-lg-7">
+                    <div class="glass-card">
+                        <h2 style="font-family: 'Outfit'; font-weight: 700; font-size: 1.8rem; margin-bottom: 25px;">Envie uma Mensagem</h2>
+                        
+                        <form id="contact-form" class="needs-validation" novalidate>
+                            <!-- Web3Forms Config -->
+                            <input type="hidden" name="access_key" value="0bf83006-d944-4243-b156-4240b82f1b48">
+                            <input type="hidden" name="subject" value="Novo Contato via Site - SuperFácil">
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-glass-label">Nome Completo</label>
+                                    <input type="text" name="name" id="name" class="form-control form-glass-input" placeholder="Ex: João Silva" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-glass-label">E-mail Corporativo</label>
+                                    <input type="email" name="email" id="email" class="form-control form-glass-input" placeholder="Ex: joao@empresa.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-glass-label">Telefone / WhatsApp</label>
+                                    <input type="tel" name="phone" id="phone" class="form-control form-glass-input" placeholder="Ex: (41) 99999-9999">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="topic" class="form-glass-label">Assunto</label>
+                                    <select name="topic" id="topic" class="form-select form-glass-input" required>
+                                        <option value="" disabled selected>Selecione um assunto...</option>
+                                        <option value="Infraestrutura de TI">Infraestrutura de TI</option>
+                                        <option value="Segurança da Informação">Segurança da Informação</option>
+                                        <option value="Gestão de Projetos">Gestão de Projetos</option>
+                                        <option value="Outro">Outro Assunto</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-glass-label">Sua Mensagem</label>
+                                    <textarea name="message" id="message" rows="4" class="form-control form-glass-input" placeholder="Como podemos ajudar a sua empresa hoje?" required></textarea>
+                                </div>
+                                
+                                <div class="col-12 mt-4">
+                                    <button type="submit" id="form-submit-btn" class="btn-glow w-100 justify-content-center">
+                                        <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Status Messages -->
+                        <div id="form-status" class="mt-4" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

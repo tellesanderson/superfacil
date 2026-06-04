@@ -152,4 +152,72 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
     }
+
+    // Form submission handler (only runs if form exists)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const statusEl = document.getElementById('form-status');
+        const submitBtn = document.getElementById('form-submit-btn');
+        const submitBtnText = submitBtn.innerHTML;
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation check
+            if (!contactForm.checkValidity()) {
+                contactForm.classList.add('was-validated');
+                return;
+            }
+
+            // Set loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Enviando...';
+            statusEl.style.display = 'none';
+
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let res = await response.json();
+                if (response.status === 200) {
+                    statusEl.innerHTML = `
+                        <div class="alert alert-success border-0 bg-success-subtle text-success p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
+                            <i class="fa-solid fa-circle-check me-2"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
+                        </div>
+                    `;
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                } else {
+                    statusEl.innerHTML = `
+                        <div class="alert alert-danger border-0 bg-danger-subtle text-danger p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
+                            <i class="fa-solid fa-circle-exclamation me-2"></i> ${res.message || 'Ops! Ocorreu um erro ao enviar sua mensagem.'}
+                        </div>
+                    `;
+                }
+                statusEl.style.display = 'block';
+            })
+            .catch(error => {
+                console.error(error);
+                statusEl.innerHTML = `
+                    <div class="alert alert-danger border-0 bg-danger-subtle text-danger p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
+                        <i class="fa-solid fa-triangle-exclamation me-2"></i> Erro de rede. Verifique sua conexão e tente novamente.
+                    </div>
+                `;
+                statusEl.style.display = 'block';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = submitBtnText;
+            });
+        });
+    }
 });
