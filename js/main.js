@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const dynamicBgEl = document.getElementById('dynamic-bg');
     if (dynamicBgEl) {
         const brokenImages = [
-            "images/broken1.png", // Computador Quebrado / Desmontado
-            "images/broken2.png", // Erro de código retro glitched
-            "images/broken3.png"  // Circuito queimado tech abstrato
+            "/images/broken1.png", // Computador Quebrado / Desmontado
+            "/images/broken2.png", // Erro de código retro glitched
+            "/images/broken3.png"  // Circuito queimado tech abstrato
         ];
         const randomElement = brokenImages[Math.floor(Math.random() * brokenImages.length)];
         dynamicBgEl.style.backgroundImage = `url('${randomElement}')`;
