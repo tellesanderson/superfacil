@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (modalDesc) modalDesc.textContent = desc;
         if (modalWaBtn) {
           const msg = encodeURIComponent(`Olá! Gostei muito do modelo "${title}" (${niche}) do portfólio da SuperFácil e gostaria de um orçamento para o meu negócio.`);
-          modalWaBtn.href = `https://wa.me/5541995709963?text=${msg}`;
+          modalWaBtn.href = `https://wa.me/sacsuperfacil?text=${msg}`;
         }
 
         modalOverlay.classList.add('active');
