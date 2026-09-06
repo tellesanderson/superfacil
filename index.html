@@ -1,240 +1,635 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O parceiro oficial do desempenho e segurança da sua empresa. Infraestrutura escalável e gestão inteligente de TI em Curitiba.">
-    <title>Consultoria em TI de Alta Performance | SuperFacil Informática</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Google Fonts: Outfit for sleek headings, Inter for clean body -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criação de Sites e Landing Pages Profissionais | SuperFácil</title>
+  <meta name="description" content="Desenvolvimento de sites e landing pages modernas para pequenos negócios, comércios locais, autônomos e pessoas físicas. Rápido, seguro, sem burocracia.">
+  <meta name="keywords" content="criação de sites, landing page, site para pequenas empresas, site para autônomos, desenvolvimento de sites Curitiba, site profissional">
+  <meta name="author" content="SuperFácil">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://superfacil.inf.br/">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://superfacil.inf.br/">
+  <meta property="og:title" content="Criação de Sites e Landing Pages Profissionais | SuperFácil">
+  <meta property="og:description" content="O site profissional que o seu negócio precisa, entregue rápido e sem dor de cabeça. Ideal para comércios locais, autônomos e sites pessoais.">
+  <meta property="og:image" content="https://superfacil.inf.br/images/hero-mockup.webp">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Criação de Sites e Landing Pages Profissionais | SuperFácil">
+  <meta name="twitter:description" content="O site profissional que o seu negócio precisa, entregue rápido e sem dor de cabeça.">
+  <meta name="twitter:image" content="https://superfacil.inf.br/images/hero-mockup.webp">
+
+  <!-- Security & Headers fallback -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome CDN (allowed by Cloudflare CSP) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SuperFácil - Criação de Sites e Landing Pages",
+    "image": "https://superfacil.inf.br/images/logo.png",
+    "@id": "https://superfacil.inf.br/",
+    "url": "https://superfacil.inf.br/",
+    "telephone": "+5541995709963",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Curitiba",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "description": "Desenvolvimento de sites profissionais e landing pages de alta conversão para pequenos negócios, autônomos e pessoas físicas.",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
 </head>
 <body>
 
-    <!-- Background Orbs -->
-    <div class="orb-1"></div>
-    <div class="orb-2"></div>
+  <!-- Ambient Glow Orbs -->
+  <div class="orb-glow orb-primary"></div>
+  <div class="orb-glow orb-cyan"></div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand" href="./">
-                <img src="images/logo.png" alt="SuperFacil Logo">
-            </a>
-            <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="./">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Empresa.html">Sobre a Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Nossos Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog & IA</a></li>
-                </ul>
-                <div class="d-flex">
-                    <a href="fale.html" class="btn btn-outline-glass btn-sm px-4">Fale Conosco</a>
-                </div>
-            </div>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="./" class="brand-logo" aria-label="SuperFácil Home">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp">
+            <img src="images/logo.png" alt="SuperFácil Logo" width="160" height="48">
+          </picture>
+          <span class="brand-tagline">Sites & Landing Pages</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação Principal">
+          <a href="./" class="nav-link active">Home</a>
+          <a href="servicos.html" class="nav-link">Serviços</a>
+          <a href="portfolio.html" class="nav-link">Portfólio</a>
+          <a href="sobre.html" class="nav-link">Sobre</a>
+          <a href="contato.html" class="nav-link">Contato</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20site." target="_blank" class="btn btn-whatsapp btn-sm btn-quote" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Pedir Orçamento
+          </a>
+          <button type="button" class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
-    </nav>
+      </div>
+    </div>
 
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu">
+      <a href="./" class="nav-link active">Home</a>
+      <a href="servicos.html" class="nav-link">Serviços & Preços</a>
+      <a href="portfolio.html" class="nav-link">Modelos de Sites</a>
+      <a href="sobre.html" class="nav-link">Quem Somos</a>
+      <a href="contato.html" class="nav-link">Fale Conosco</a>
+      <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20site." target="_blank" class="btn btn-whatsapp w-100 mt-2" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
     <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="badge-tech" style="display:inline-block; padding:8px 16px; background:rgba(6,182,212,0.1); border:1px solid rgba(6,182,212,0.2); color:var(--accent-cyan); border-radius:50px; font-family:'Outfit',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:1px; margin-bottom:20px;">
-                        <i class="fa-solid fa-bolt me-2"></i> Tecnologia Levada a Sério
-                    </div>
-                    <h1 class="hero-title">
-                        O Parceiro Oficial do <br>
-                        <span class="glow-text">Desempenho e Segurança</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Mais de uma década blindando dados, estruturando redes inteligentes e garantindo o crescimento escalável de empresas em Curitiba e Região. O futuro da sua TI começa aqui.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="btn-glow">
-                            <i class="fa-brands fa-whatsapp"></i> Fale com um Especialista
-                        </a>
-                        <a href="services.html" class="btn-outline-glass">
-                            Conheça Nossas Soluções
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block text-center position-relative">
-                    <!-- Tech Illustration / Abstract -->
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cyber Security" style="border-radius:24px; filter: drop-shadow(0 20px 30px rgba(6,182,212,0.2)); width:90%; border: 1px solid rgba(255,255,255,0.1);">
-                </div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge badge-tech">
+                <i class="fa-solid fa-bolt"></i> Sites Modernos • Sem Burocracia
+              </span>
             </div>
+
+            <h1 class="hero-title">
+              O site profissional que o seu negócio precisa, <span class="gradient-text">rápido e sem dor de cabeça.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Criamos landing pages e sites sob medida para pequenos comércios, autônomos e profissionais liberais. Design impecável, carregamento instantâneo no celular e pronto para transformar visitantes em contatos no WhatsApp.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20criar%20meu%20site." target="_blank" class="btn btn-whatsapp btn-lg" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Orçamento Rápido no WhatsApp
+              </a>
+              <a href="portfolio.html" class="btn btn-outline btn-lg">
+                Ver Modelos de Sites <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="hero-trust-strip">
+              <div class="trust-item">
+                <i class="fa-solid fa-check"></i> +12 anos de solidez técnica
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-check"></i> 100% fluido no celular
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-check"></i> Sem mensalidades abusivas
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-check"></i> Entrega em poucos dias
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <div class="hero-mockup-wrapper">
+              <img src="images/hero-mockup.webp" alt="Mockup de site profissional em notebook e smartphone" width="600" height="338" fetchpriority="high">
+              <div class="floating-pill">
+                <span class="pulsing-dot"></span>
+                <span style="font-size:0.85rem; font-weight:600; color:#ffffff;">Online agora no WhatsApp</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- STATS STRIP -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4 stat-item">
-                    <h4 id="yearsMarket">12+</h4>
-                    <p>Anos no Mercado</p>
-                </div>
-                <div class="col-md-4 stat-item">
-                    <h4>24/7</h4>
-                    <p>Monitoramento e Segurança</p>
-                </div>
-                <div class="col-md-4 stat-item">
-                    <h4>100%</h4>
-                    <p>Comprometimento e Foco</p>
-                </div>
-            </div>
+    <section class="stats-bar">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Código Leve e Sob Medida</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3 a 7</div>
+            <div class="stat-label">Dias de Prazo Médio</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Anos de Bagagem Técnica</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Burocracia de Contrato</div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES OVERVIEW -->
     <section class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tech">Nossa Expertise</span>
-                <h2>Soluções que Escalão o seu Business</h2>
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-cyan">Soluções Completas</span>
+          <h2>Qual é o tipo de site ideal para você?</h2>
+          <p>Trabalhamos com formatos objetivos e pensados estrategicamente para o momento do seu negócio, sem complicações técnicas.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: Landing Page -->
+          <div class="card-glass service-card">
+            <div>
+              <div class="icon-box">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3>Landing Page de Vendas</h3>
+              <p>Página única ultra-focada em conversão. Perfeita para quem roda anúncios no Instagram/Google ou quer divulgar um serviço específico com botão de WhatsApp.</p>
+              
+              <div class="service-deliverables">
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Foco total em conversão</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Carregamento em menos de 1s</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Botão flutuante de WhatsApp</div>
+              </div>
             </div>
             
-            <div class="row g-4">
-                <!-- Service 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="glass-card">
-                        <div class="icon-wrapper">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <h3>Infraestrutura de TI</h3>
-                        <p>Desenhamos e implantamos servidores e redes robustas, garantindo que sua operação nunca pare e sua conexão sempre esteja em alta performance.</p>
-                        <a href="fale.html" style="color:var(--accent-cyan); text-decoration:none; font-weight:600; font-family:'Outfit';">Saiba mais <i class="fa-solid fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="glass-card">
-                        <div class="icon-wrapper">
-                            <i class="fa-solid fa-diagram-project"></i>
-                        </div>
-                        <h3>Gestão de Projetos</h3>
-                        <p>Consultoria estratégica completa: transformamos suas ideias em implantações lógicas, controlando prazos, orçamentos e mitigando riscos de negócio.</p>
-                        <a href="fale.html" style="color:var(--accent-cyan); text-decoration:none; font-weight:600; font-family:'Outfit';">Saiba mais <i class="fa-solid fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="glass-card" style="border-color: rgba(6,182,212,0.3);">
-                        <div class="icon-wrapper" style="color:white; background:linear-gradient(135deg, #06b6d4, #3b82f6); box-shadow:0 10px 20px rgba(6,182,212,0.3);">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h3>Segurança da Informação</h3>
-                        <p>A proteção definitiva para seus dados sensíveis. Defesas cibernéticas proativas, backups cloud isolados e barreiras anti-Ransomware corporativas.</p>
-                        <a href="fale.html" style="color:var(--accent-cyan); text-decoration:none; font-weight:600; font-family:'Outfit';">Saiba mais <i class="fa-solid fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
+            <div class="service-footer">
+              <span class="scope-badge"><i class="fa-regular fa-clock"></i> 3 a 5 dias</span>
+              <a href="servicos.html" class="btn btn-outline btn-sm">Ver Detalhes</a>
             </div>
+          </div>
+
+          <!-- Service 2: Site Institucional -->
+          <div class="card-glass service-card">
+            <div>
+              <div class="icon-box">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <h3>Site para Empresa Local</h3>
+              <p>Presença digital completa para clínicas, escritórios, salões, academias e comércios de bairro. Apresente seus serviços, localização e passe máxima credibilidade.</p>
+              
+              <div class="service-deliverables">
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Seções de serviços & mapa</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Galeria de fotos e avaliações</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Otimizado para o Google Local</div>
+              </div>
+            </div>
+            
+            <div class="service-footer">
+              <span class="scope-badge"><i class="fa-regular fa-clock"></i> 5 a 8 dias</span>
+              <a href="servicos.html" class="btn btn-outline btn-sm">Ver Detalhes</a>
+            </div>
+          </div>
+
+          <!-- Service 3: Site Pessoal -->
+          <div class="card-glass service-card">
+            <div>
+              <div class="icon-box">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <h3>Site Pessoal & Portfólio</h3>
+              <p>O cartão de visitas digital de alto nível para médicos, advogados, consultores, designers e autônomos que desejam transmitir autoridade de ponta.</p>
+              
+              <div class="service-deliverables">
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Biografia & especialidades</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Vitrine de projetos e cases</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Links diretos para redes sociais</div>
+              </div>
+            </div>
+            
+            <div class="service-footer">
+              <span class="scope-badge"><i class="fa-regular fa-clock"></i> 4 a 6 dias</span>
+              <a href="servicos.html" class="btn btn-outline btn-sm">Ver Detalhes</a>
+            </div>
+          </div>
+
+          <!-- Service 4: Catálogo WhatsApp -->
+          <div class="card-glass service-card">
+            <div>
+              <div class="icon-box">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <h3>Cardápio & Catálogo Digital</h3>
+              <p>Apresente seus pratos, doces ou produtos com fotos apetitosas e receba os pedidos diretamente organizados no WhatsApp, livre de comissões de aplicativos.</p>
+              
+              <div class="service-deliverables">
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Fotos, preços e descrições</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Pedido montado no WhatsApp</div>
+                <div class="deliverable-item"><i class="fa-solid fa-check"></i> Sem taxas por pedido</div>
+              </div>
+            </div>
+            
+            <div class="service-footer">
+              <span class="scope-badge"><i class="fa-regular fa-clock"></i> 4 a 7 dias</span>
+              <a href="servicos.html" class="btn btn-outline btn-sm">Ver Detalhes</a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section class="section-padding" style="background: rgba(15,23,42,0.3); border-top: 1px solid var(--glass-border);">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tech">Prova Social</span>
-                <h2>O que dizem nossos clientes parceiros</h2>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"O atendimento da SuperFacil é impecável! Profissionais dedicados que entregam soluções personalizadas com excelência total na nossa infraestrutura."</p>
-                        <h5 class="client-name">Beatriz</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Encontramos as soluções em segurança de rede que superaram nossas expectativas. Uma equipe extremamente moderna e comprometida."</p>
-                        <h5 class="client-name">Bernardo Rossi</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Soluções personalizadas desenhadas de forma rápida e eficiente. A expertise técnica da SuperFacil revolucionou a velocidade da nossa empresa."</p>
-                        <h5 class="client-name">Rodrigo Santos</h5>
-                    </div>
-                </div>
-            </div>
+    <!-- PORTFOLIO HIGHLIGHTS -->
+    <section class="section-padding" style="background: rgba(15, 23, 42, 0.25); border-top: 1px solid var(--border-glass);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-tech">Modelos Prontos</span>
+          <h2>Destaques do nosso Portfólio</h2>
+          <p>Confira prévias visuais de modelos criados para diferentes nichos de mercado. Cada projeto possui uma identidade visual única e pensada para o seu público.</p>
         </div>
+
+        <div class="portfolio-grid">
+          <!-- Item 1: Restaurante -->
+          <div class="portfolio-card">
+            <div class="portfolio-thumb-wrapper" data-open-modal>
+              <img src="images/portfolio-restaurante.webp" alt="Modelo de site para restaurante e hamburgueria gourmet" class="portfolio-thumb" loading="lazy" width="600" height="338">
+              <span class="portfolio-badge-niche">Gastronomia</span>
+            </div>
+            <div class="portfolio-card-body">
+              <h3>Sabor & Brasa // Hamburgueria & Restaurante</h3>
+              <p>Visual acolhedor e apetitoso com cardápio interativo, horário de funcionamento e botão para pedir na hora pelo WhatsApp.</p>
+              <div class="portfolio-features-pill">
+                <span class="feature-pill"><i class="fa-solid fa-utensils me-1"></i> Cardápio Online</span>
+                <span class="feature-pill"><i class="fa-brands fa-whatsapp me-1"></i> Pedido Direto</span>
+                <span class="feature-pill"><i class="fa-solid fa-location-dot me-1"></i> Mapa & Horários</span>
+              </div>
+              <div class="portfolio-card-action">
+                <a href="portfolio.html" class="btn btn-outline btn-sm">Ver Mais Detalhes</a>
+                <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Gostei%20do%20modelo%20para%20Restaurante%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp btn-sm" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Quero esse estilo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Salão / Beleza -->
+          <div class="portfolio-card">
+            <div class="portfolio-thumb-wrapper" data-open-modal>
+              <img src="images/portfolio-beleza.webp" alt="Modelo de site para salão de beleza e estética" class="portfolio-thumb" loading="lazy" width="600" height="338">
+              <span class="portfolio-badge-niche">Beleza & Estética</span>
+            </div>
+            <div class="portfolio-card-body">
+              <h3>Studio Elegance // Salão & Estética</h3>
+              <p>Identidade refinada em tons champagne e nude, com tabela de procedimentos, fotos de transformações e agendamento prático.</p>
+              <div class="portfolio-features-pill">
+                <span class="feature-pill"><i class="fa-regular fa-calendar-check me-1"></i> Agendamento</span>
+                <span class="feature-pill"><i class="fa-solid fa-spa me-1"></i> Lista de Serviços</span>
+                <span class="feature-pill"><i class="fa-solid fa-star me-1"></i> Avaliações Reais</span>
+              </div>
+              <div class="portfolio-card-action">
+                <a href="portfolio.html" class="btn btn-outline btn-sm">Ver Mais Detalhes</a>
+                <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Gostei%20do%20modelo%20para%20Sal%C3%A3o%20de%20Beleza/Est%C3%A9tica%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp btn-sm" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Quero esse estilo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Advocacia -->
+          <div class="portfolio-card">
+            <div class="portfolio-thumb-wrapper" data-open-modal>
+              <img src="images/portfolio-advocacia.webp" alt="Modelo de site para escritório de advocacia e consultoria jurídica" class="portfolio-thumb" loading="lazy" width="600" height="338">
+              <span class="portfolio-badge-niche">Advocacia & Direito</span>
+            </div>
+            <div class="portfolio-card-body">
+              <h3>Vanguard Advocacia // Escritório Jurídico</h3>
+              <p>Design sóbrio e imponente em azul marinho com detalhes dourados. Destaca áreas de atuação e transmite autoridade e segurança jurídica.</p>
+              <div class="portfolio-features-pill">
+                <span class="feature-pill"><i class="fa-solid fa-scale-balanced me-1"></i> Áreas de Atuação</span>
+                <span class="feature-pill"><i class="fa-solid fa-shield-halved me-1"></i> Consulta Discreta</span>
+                <span class="feature-pill"><i class="fa-solid fa-user-tie me-1"></i> Perfil dos Sócios</span>
+              </div>
+              <div class="portfolio-card-action">
+                <a href="portfolio.html" class="btn btn-outline btn-sm">Ver Mais Detalhes</a>
+                <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Gostei%20do%20modelo%20para%20Advocacia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp btn-sm" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Quero esse estilo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Academia / Fitness -->
+          <div class="portfolio-card">
+            <div class="portfolio-thumb-wrapper" data-open-modal>
+              <img src="images/portfolio-fitness.webp" alt="Modelo de site para academia, personal trainer e crossfit" class="portfolio-thumb" loading="lazy" width="600" height="338">
+              <span class="portfolio-badge-niche">Academia & Fitness</span>
+            </div>
+            <div class="portfolio-card-body">
+              <h3>IronFit Club // Academia & Crossfit</h3>
+              <p>Alta energia visual em dark mode moderno com neon. Exibe modalidades, quadro de horários, planos e botão para aula experimental grátis.</p>
+              <div class="portfolio-features-pill">
+                <span class="feature-pill"><i class="fa-solid fa-dumbbell me-1"></i> Planos & Preços</span>
+                <span class="feature-pill"><i class="fa-solid fa-clock me-1"></i> Grade de Horários</span>
+                <span class="feature-pill"><i class="fa-solid fa-fire me-1"></i> Aula Experimental</span>
+              </div>
+              <div class="portfolio-card-action">
+                <a href="portfolio.html" class="btn btn-outline btn-sm">Ver Mais Detalhes</a>
+                <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Gostei%20do%20modelo%20para%20Academia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp btn-sm" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Quero esse estilo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="portfolio.html" class="btn btn-primary btn-lg">
+            Ver Todos os 8 Modelos no Portfólio <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <a href="./">
-                        <img src="images/logo.png" alt="SuperFacil Logo" class="footer-logo">
-                    </a>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top:15px; margin-right:20px;">
-                        Protegendo dados e acelerando sistemas desde 2011. Sua infraestrutura blindada e moderna na palma da mão.
-                    </p>
-                    <div class="mt-4">
-                        <a href="https://wa.me/5541995709963" class="social-circle" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" class="social-circle"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5 style="color:white; font-family:'Outfit'; font-weight:700; margin-bottom: 20px;">Contato Direto</h5>
-                    <ul class="list-unstyled" style="color: var(--text-muted); line-height: 2;">
-                        <li><i class="fa-solid fa-location-dot me-2" style="color:var(--accent-cyan);"></i> Curitiba, PR - e Região</li>
-                        <li><i class="fa-solid fa-envelope me-2" style="color:var(--accent-cyan);"></i> <a href="fale.html" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='inherit'">Enviar uma Mensagem</a></li>
-                        <li><i class="fa-solid fa-phone me-2" style="color:var(--accent-cyan);"></i> +55 (41) 99570-9963</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5 style="color:white; font-family:'Outfit'; font-weight:700; margin-bottom: 20px;">Acesso Rápido</h5>
-                    <ul class="list-unstyled" style="line-height:2;">
-                        <li><a href="Empresa.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Quem Somos</a></li>
-                        <li><a href="services.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Consultorias em Portfólio</a></li>
-                        <li><a href="blog.html" style="color: var(--text-muted); text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">Artigos e IA</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5 pt-4" style="border-top:1px solid rgba(255,255,255,0.05); color:var(--text-muted); font-size:0.85rem;">
-                © <span id="currentYear"></span> SuperFacil Informática. Todos os direitos reservados.
-            </div>
+    <!-- WHY CHOOSE SUPERFÁCIL -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-success">Por que a SuperFácil?</span>
+          <h2>O fim das agências complicadas e dos sites lentos</h2>
+          <p>Você não precisa de um contrato engessado de 20 páginas nem de termos técnicos complicados. Precisa de um site bonito, rápido e que funcione.</p>
         </div>
-    </footer>
 
-    <!-- Whatsapp Floating Button -->
-    <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="fab-whatsapp" aria-label="Fale conosco no WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+        <div class="benefits-grid">
+          <div class="card-glass benefit-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-handshake-simple"></i>
+            </div>
+            <h4>Sem Burocracia</h4>
+            <p>Atendimento direto e humano. Combinamos o escopo, você envia as informações e o site fica pronto sem formulários burocráticos ou CNPJ obrigatório.</p>
+          </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+          <div class="card-glass benefit-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h4>Velocidade Real</h4>
+            <p>Não usamos modelos pesados cheios de plugins que quebram a cada mês. O código é limpo, carregando em frações de segundo até em conexões móveis fracas.</p>
+          </div>
+
+          <div class="card-glass benefit-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <h4>O Site é 100% Seu</h4>
+            <p>Depois de pronto e publicado, o site pertence a você. Sem contratos de fidelidade com mensalidades forçadas ou surpresas na fatura.</p>
+          </div>
+
+          <div class="card-glass benefit-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-shield-check"></i>
+            </div>
+            <h4>Confiabilidade Técnica</h4>
+            <p>Mais de 12 anos de sólida experiência em engenharia de software e infraestrutura. Seu site conta com certificado de segurança SSL e arquitetura blindada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section-padding" style="background: rgba(15, 23, 42, 0.3); border-top: 1px solid var(--border-glass);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-cyan">Depoimentos</span>
+          <h2>Quem já colocou o site no ar</h2>
+          <p>O que pequenos empresários e profissionais autônomos dizem sobre a facilidade e o resultado do nosso trabalho.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">
+                "Eu já tinha tentado fazer por conta própria e ficou horrível. A SuperFácil pegou minhas ideias e em menos de uma semana minha landing page estava pronta e recebendo mensagens no WhatsApp."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">MR</div>
+              <div class="author-info">
+                <h5>Marcos Ribeiro</h5>
+                <span>Hamburgueria Artesanal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">
+                "O site transmitiu exatamente a sofisticação que minhas clientes procuravam no salão. As fotos ficaram perfeitas e o botão direto para agendamento facilitou muito nosso dia a dia."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">CL</div>
+              <div class="author-info">
+                <h5>Camila Loreto</h5>
+                <span>Estética & Micropigmentação</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">
+                "Procurei agências que me pediam orçamentos absurdos e contratos cheios de termos complicados. Aqui foi tudo transparente, direto ao ponto e com um suporte impecável."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">FA</div>
+              <div class="author-info">
+                <h5>Fernando Almeida</h5>
+                <span>Consultor Financeiro Autônomo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="card-glass" style="text-align: center; padding: 70px 30px; border-color: rgba(37, 99, 235, 0.35); background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(37, 99, 235, 0.1));">
+          <span class="badge badge-success mb-3">Atendimento Rápido</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px;">Vamos colocar o seu site no ar esta semana?</h2>
+          <p style="max-width: 620px; margin: 0 auto 36px auto; font-size: 1.15rem;">
+            Diga adeus à invisibilidade na internet. Converse conosco agora mesmo pelo WhatsApp ou envie uma mensagem com o que você precisa.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Quero%20colocar%20meu%20site%20no%20ar%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp btn-lg" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Conversar pelo WhatsApp
+            </a>
+            <a href="contato.html" class="btn btn-outline btn-lg">
+              Enviar uma Mensagem <i class="fa-solid fa-envelope ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp">
+            <img src="images/logo.png" alt="SuperFácil Logo" width="160" height="48">
+          </picture>
+          <p>
+            Desenvolvimento moderno e descomplicado de sites e landing pages para pequenos negócios, comércios e profissionais autônomos. Código sob medida, seguro e ultra-rápido.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="./" class="footer-link"><i class="fa-solid fa-angle-right"></i> Página Inicial</a></li>
+            <li><a href="servicos.html" class="footer-link"><i class="fa-solid fa-angle-right"></i> Tipos de Sites & Serviços</a></li>
+            <li><a href="portfolio.html" class="footer-link"><i class="fa-solid fa-angle-right"></i> Modelos do Portfólio</a></li>
+            <li><a href="sobre.html" class="footer-link"><i class="fa-solid fa-angle-right"></i> Sobre a SuperFácil</a></li>
+            <li><a href="contato.html" class="footer-link"><i class="fa-solid fa-angle-right"></i> Pedir Orçamento</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato Direto</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="https://wa.me/5541995709963" target="_blank" class="footer-link" rel="noopener">
+                <i class="fa-brands fa-whatsapp" style="color:var(--whatsapp);"></i> (41) 99570-9963
+              </a>
+            </li>
+            <li>
+              <a href="contato.html" class="footer-link">
+                <i class="fa-solid fa-envelope" style="color:var(--accent-cyan);"></i> Formulário de Contato
+              </a>
+            </li>
+            <li>
+              <span class="footer-link" style="color:var(--text-muted);">
+                <i class="fa-solid fa-location-dot" style="color:var(--accent-cyan);"></i> Curitiba, PR (Atendimento em todo o Brasil)
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span class="current-year"></span> SuperFácil Informática. Todos os direitos reservados.
+        </div>
+        <div>
+          Feito com código limpo, WebP e alta performance.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/5541995709963?text=Ol%C3%A1!%20Visitei%20o%20site%20da%20SuperF%C3%A1cil%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20cria%C3%A7%C3%A3o%20de%20site." target="_blank" class="whatsapp-fab" aria-label="Falar conosco no WhatsApp" rel="noopener">
+    <span class="whatsapp-fab-badge"></span>
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- MODAL / LIGHTBOX FOR PREVIEWS -->
+  <div class="modal-overlay" id="portfolio-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close-btn" aria-label="Fechar prévia">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="" alt="Prévia do modelo de site" class="modal-img">
+      <div class="modal-body">
+        <h3 class="modal-title" style="margin-bottom: 8px;">Modelo de Site</h3>
+        <p class="modal-desc" style="font-size: 0.95rem; margin-bottom: 20px;">Descrição do modelo</p>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <a href="#" target="_blank" class="btn btn-whatsapp modal-wa-btn" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Quero um site neste estilo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>

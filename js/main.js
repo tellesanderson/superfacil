@@ -1,259 +1,216 @@
+/**
+ * SuperFácil - Core Interactive Scripts
+ * Lightweight, Vanilla JS, Zero Dependencies
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Set dynamic current year in footer
-    const currentYearEl = document.getElementById('currentYear');
-    if (currentYearEl) {
-        currentYearEl.textContent = new Date().getFullYear();
-    }
+  // 1. Dynamic Footer Year
+  const yearSpans = document.querySelectorAll('.current-year');
+  const nowYear = new Date().getFullYear();
+  yearSpans.forEach(el => el.textContent = nowYear);
 
-    // Set years in market stat (only exists on homepage)
-    const yearsMarketEl = document.getElementById('yearsMarket');
-    if (yearsMarketEl) {
-        yearsMarketEl.textContent = (new Date().getFullYear() - 2011) + '+';
-    }
+  // 2. Sticky Navbar Blur & Shadow on Scroll
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 
-    // Sticky Navbar shadow effect on scroll
-    const glassNav = document.querySelector('.glass-nav');
-    if (glassNav) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                glassNav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-            } else {
-                glassNav.style.boxShadow = 'none';
-            }
+  // 3. Mobile Navigation Drawer
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    });
+
+    // Close on clicking any link inside
+    mobileMenu.querySelectorAll('.nav-link, .btn').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      });
+    });
+  }
+
+  // 4. Portfolio Filters
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  if (filterBtns.length > 0 && portfolioCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+
+        portfolioCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 20);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 200);
+          }
         });
-    }
+      });
+    });
+  }
 
-    // Dynamic background image for 404 page (only exists on 404 page)
-    const dynamicBgEl = document.getElementById('dynamic-bg');
-    if (dynamicBgEl) {
-        const brokenImages = [
-            "/images/broken1.png", // Computador Quebrado / Desmontado
-            "/images/broken2.png", // Erro de código retro glitched
-            "/images/broken3.png"  // Circuito queimado tech abstrato
-        ];
-        const randomElement = brokenImages[Math.floor(Math.random() * brokenImages.length)];
-        dynamicBgEl.style.backgroundImage = `url('${randomElement}')`;
-    }
+  // 5. Portfolio Modal / Lightbox
+  const modalOverlay = document.getElementById('portfolio-modal');
+  if (modalOverlay) {
+    const modalImg = modalOverlay.querySelector('.modal-img');
+    const modalTitle = modalOverlay.querySelector('.modal-title');
+    const modalDesc = modalOverlay.querySelector('.modal-desc');
+    const modalWaBtn = modalOverlay.querySelector('.modal-wa-btn');
+    const closeBtn = modalOverlay.querySelector('.modal-close-btn');
 
-    // Dynamic news loading (only exists on blog page)
-    const newsContainer = document.getElementById('news-container');
-    if (newsContainer) {
-        const feedUrl = 'https://g1.globo.com/rss/g1/tecnologia/';
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
+    document.querySelectorAll('[data-open-modal]').forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        const card = this.closest('.portfolio-card') || this;
+        const img = card.querySelector('.portfolio-thumb')?.getAttribute('src') || '';
+        const title = card.querySelector('.portfolio-card-body h3')?.textContent || 'Modelo de Site';
+        const desc = card.querySelector('.portfolio-card-body p')?.textContent || '';
+        const niche = card.querySelector('.portfolio-badge-niche')?.textContent || 'Landing Page';
 
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro na requisição do feed');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'ok') {
-                    renderNews(data.items);
-                } else {
-                    showNewsError();
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching news:', error);
-                showNewsError();
-            });
-    }
+        if (modalImg) modalImg.src = img;
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalDesc) modalDesc.textContent = desc;
+        if (modalWaBtn) {
+          const msg = encodeURIComponent(`Olá! Gostei muito do modelo "${title}" (${niche}) do portfólio da SuperFácil e gostaria de um orçamento para o meu negócio.`);
+          modalWaBtn.href = `https://wa.me/5541995709963?text=${msg}`;
+        }
 
-    function renderNews(items) {
-        newsContainer.innerHTML = ''; // Clear skeletons
-        const limitItems = items.slice(0, 6);
-        
-        limitItems.forEach((item) => {
-            const imgUrl = getNewsImage(item);
-            const cleanedDesc = cleanDescription(item.description);
-            const formattedDate = formatDate(item.pubDate);
-            const category = item.categories && item.categories.length > 0 ? item.categories[0] : 'Tecnologia';
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
 
-            const cardHtml = `
-                <div class="col-lg-4 col-md-6">
-                    <article class="news-card">
-                        <div class="news-card-img-wrapper">
-                            <img src="${imgUrl}" alt="${item.title}" class="news-card-img" loading="lazy">
-                            <div class="news-card-img-overlay"></div>
-                        </div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag">${category}</span>
-                            <h3 class="news-card-title">${item.title}</h3>
-                            <p class="news-card-desc">${cleanedDesc}</p>
-                            <div class="news-card-footer">
-                                <span class="news-card-date">
-                                    <i class="fa-regular fa-calendar me-1"></i> ${formattedDate}
-                                </span>
-                                <a href="${item.link}" target="_blank" class="news-card-link">
-                                    Ler artigo <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:0.75rem;"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+    const closeModal = () => {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+    });
+  }
+
+  // 6. Contact Form Submission (Web3Forms API + Honeypot + Real-time feedback)
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const statusBox = document.getElementById('form-status');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Enviar Mensagem';
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Honeypot check
+      const honeypot = contactForm.querySelector('input[name="botcheck"]');
+      if (honeypot && honeypot.checked) {
+        console.warn('Spam detected via honeypot.');
+        return;
+      }
+
+      // Basic HTML5 validation check
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+      }
+
+      if (statusBox) {
+        statusBox.style.display = 'none';
+        statusBox.className = 'form-status-box';
+      }
+
+      const formData = new FormData(contactForm);
+      const jsonObject = Object.fromEntries(formData);
+      const payload = JSON.stringify(jsonObject);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: payload
+      })
+      .then(async (response) => {
+        const res = await response.json();
+        if (response.status === 200 && res.success) {
+          contactForm.reset();
+          if (statusBox) {
+            statusBox.className = 'form-status-box success';
+            statusBox.innerHTML = `
+              <div style="display:flex; align-items:center; gap:12px;">
+                <i class="fa-solid fa-circle-check" style="font-size:1.4rem;"></i>
+                <div>
+                  <strong>Mensagem enviada com sucesso!</strong>
+                  <p style="margin:0; font-size:0.88rem; color:inherit;">Recebemos sua solicitação e entraremos em contato muito em breve via WhatsApp ou e-mail.</p>
                 </div>
+              </div>
             `;
-            newsContainer.insertAdjacentHTML('beforeend', cardHtml);
-        });
-    }
-
-    function getNewsImage(item) {
-        if (item.thumbnail) return item.thumbnail;
-        if (item.enclosure && item.enclosure.link) return item.enclosure.link;
-        if (item.description) {
-            const imgMatch = item.description.match(/<img[^>]+src="([^">]+)"/);
-            if (imgMatch) return imgMatch[1];
+            statusBox.style.display = 'block';
+          }
+        } else {
+          throw new Error(res.message || 'Erro ao enviar mensagem.');
         }
-        const fallbackImages = [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-        ];
-        return fallbackImages[item.title.length % fallbackImages.length];
-    }
-
-    function cleanDescription(html) {
-        if (!html) return '';
-        let text = html.replace(/<[^>]*>/g, '');
-        text = text.replace(/&nbsp;/g, ' ')
-                   .replace(/&amp;/g, '&')
-                   .replace(/&lt;/g, '<')
-                   .replace(/&gt;/g, '>')
-                   .replace(/&quot;/g, '"');
-        return text.trim();
-    }
-
-    function formatDate(dateString) {
-        try {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric'
-            });
-        } catch (e) {
-            return dateString;
-        }
-    }
-
-    function showNewsError() {
-        newsContainer.innerHTML = `
-            <div class="col-12 text-center py-5">
-                <div class="glass-card d-inline-block p-5" style="max-width: 500px; border-color: rgba(220, 38, 38, 0.3);">
-                    <i class="fa-solid fa-circle-exclamation text-danger mb-3" style="font-size: 3rem;"></i>
-                    <h3 class="mb-3">Não foi possível carregar as notícias</h3>
-                    <p class="text-muted mb-4">Houve um problema de conexão ao buscar o feed de notícias em tempo real. Por favor, verifique sua conexão ou tente novamente.</p>
-                    <button onclick="window.location.reload()" class="btn-glow btn-sm">
-                        <i class="fa-solid fa-rotate-right"></i> Tentar Novamente
-                    </button>
-                </div>
+      })
+      .catch((err) => {
+        console.error('Contact form error:', err);
+        if (statusBox) {
+          statusBox.className = 'form-status-box error';
+          statusBox.innerHTML = `
+            <div style="display:flex; align-items:center; gap:12px;">
+              <i class="fa-solid fa-triangle-exclamation" style="font-size:1.4rem;"></i>
+              <div>
+                <strong>Não foi possível enviar a mensagem.</strong>
+                <p style="margin:0; font-size:0.88rem; color:inherit;">Por favor, tente novamente ou fale conosco diretamente pelo WhatsApp no botão ao lado.</p>
+              </div>
             </div>
-        `;
-    }
-
-    // Form submission handler (only runs if form exists)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        const statusEl = document.getElementById('form-status');
-        const submitBtn = document.getElementById('form-submit-btn');
-        const submitBtnText = submitBtn.innerHTML;
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation check
-            if (!contactForm.checkValidity()) {
-                contactForm.classList.add('was-validated');
-                return;
-            }
-
-            // Set loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Enviando...';
-            statusEl.style.display = 'none';
-
-            const formData = new FormData(contactForm);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let res = await response.json();
-                if (response.status === 200) {
-                    // Fade out form fields
-                    contactForm.style.transition = 'opacity 0.4s ease';
-                    contactForm.style.opacity = '0';
-                    setTimeout(() => {
-                        contactForm.style.display = 'none';
-                        statusEl.innerHTML = `
-                            <div class="text-center py-5 animate-fade-in">
-                                <div class="success-checkmark">
-                                    <div class="check-icon">
-                                        <span class="icon-line line-long"></span>
-                                        <span class="icon-line line-tip"></span>
-                                    </div>
-                                </div>
-                                <h3 style="font-family:'Outfit'; font-weight:800; font-size:1.8rem; margin-bottom:15px; color:#ffffff;">Mensagem Recebida!</h3>
-                                <p class="text-muted mb-4" style="font-size:1.05rem; max-width:420px; margin: 0 auto 30px; line-height: 1.6;">
-                                    Muito obrigado pelo contato. Nossa equipe de TI analisará a sua mensagem e responderá em até 2 horas úteis.
-                                </p>
-                                <button type="button" id="reset-form-btn" class="btn-outline-glass btn-sm" style="font-size:0.9rem; padding: 10px 24px; cursor: pointer;">
-                                    <i class="fa-solid fa-arrow-left me-1"></i> Enviar Outra Mensagem
-                                </button>
-                            </div>
-                        `;
-                        statusEl.style.display = 'block';
-                    }, 400);
-                } else {
-                    statusEl.innerHTML = `
-                        <div class="alert alert-danger border-0 bg-danger-subtle text-danger p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
-                            <i class="fa-solid fa-circle-exclamation me-2"></i> ${res.message || 'Ops! Ocorreu um erro ao enviar sua mensagem.'}
-                        </div>
-                    `;
-                    statusEl.style.display = 'block';
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                statusEl.innerHTML = `
-                    <div class="alert alert-danger border-0 bg-danger-subtle text-danger p-3 rounded-3" style="font-family:'Outfit'; font-size: 0.95rem;">
-                        <i class="fa-solid fa-triangle-exclamation me-2"></i> Erro de rede. Verifique sua conexão e tente novamente.
-                    </div>
-                `;
-                statusEl.style.display = 'block';
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = submitBtnText;
-            });
-        });
-        statusEl.addEventListener('click', function(e) {
-            const btn = e.target.closest('#reset-form-btn');
-            if (btn) {
-                statusEl.style.transition = 'opacity 0.3s ease';
-                statusEl.style.opacity = '0';
-                setTimeout(() => {
-                    statusEl.style.display = 'none';
-                    statusEl.innerHTML = '';
-                    statusEl.style.opacity = '1';
-                    
-                    contactForm.reset();
-                    contactForm.classList.remove('was-validated');
-                    contactForm.style.display = 'block';
-                    setTimeout(() => {
-                        contactForm.style.opacity = '1';
-                    }, 50);
-                }, 300);
-            }
-        });
-    }
+          `;
+          statusBox.style.display = 'block';
+        }
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      });
+    });
+  }
 });
